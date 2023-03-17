@@ -1,0 +1,36 @@
+# Версия схемы, которую мы используем.
+# Зависит от установленной версии docker
+# https://docs.docker.com/compose/compose-file/
+version: "3"
+# Определяем список сервисов — services
+# Эти сервисы будут частью нашего приложения
+services:
+
+  frontend: # Имя сервиса
+    container_name: chess-frontend-master
+    build: 
+      context: ./chess-frontend-master
+      # Контекст для сборки образа,
+      # в данном случае, ?текущая? директория
+      dockerfile: Dockerfile
+    ports:
+    - "3000:3000"
+    depends_on:
+    - backend
+
+  backend:
+    container_name: chess-backend-master
+    build: 
+      context: ./chess-backend-master
+      dockerfile: Dockerfile
+    ports:
+      - "5000:5000"
+    depends_on:
+      - mongo
+    environment:
+      MONGO_URL: mongodb://mongo:27017/chess-project
+  mongo:
+    container_name: mongo-db
+    image: mongo:latest
+    ports:
+      - "27017:27017"
