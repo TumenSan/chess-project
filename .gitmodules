@@ -1,0 +1,6 @@
+[submodule "chess-backend-master"]
+	path = chess-backend-master
+	url = https://github.com/TumenSan/chess-backend-master.git
+[submodule "chess-frontend-master"]
+	path = chess-frontend-master
+	url = https://github.com/TumenSan/chess-frontend-master.git
