@@ -11,7 +11,7 @@ services:
     build: 
       context: ./chess-frontend-master
       # Контекст для сборки образа,
-      # в данном случае, ?текущая? директория
+      # в данном случае, текущая директория
       dockerfile: Dockerfile
     ports:
     - "3000:3000"
@@ -29,8 +29,30 @@ services:
       - mongo
     environment:
       MONGO_URL: mongodb://mongo:27017/chess-project
+
   mongo:
     container_name: mongo-db
     image: mongo:latest
     ports:
       - "27017:27017"
+
+  engine:
+    container_name: chess-engine-exp
+    build: 
+      context: ./chess-engine-exp
+      dockerfile: Dockerfile
+    ports:
+      - "6000:6000"
+    depends_on:
+      - backend
+      - rabbitmq
+
+  rabbitmq:
+    image: rabbitmq:3.9-management
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    #restart: always
+    environment:
+      RABBITMQ_DEFAULT_USER: user1
+      RABBITMQ_DEFAULT_PASS: password1
