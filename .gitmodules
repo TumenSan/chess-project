@@ -4,3 +4,6 @@
 [submodule "chess-frontend-master"]
 	path = chess-frontend-master
 	url = https://github.com/TumenSan/chess-frontend-master.git
+[submodule "chess-engine-exp"]
+	path = chess-engine-exp
+	url = https://github.com/TumenSan/chess-engine-exp.git
