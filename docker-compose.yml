@@ -56,3 +56,9 @@ services:
     environment:
       RABBITMQ_DEFAULT_USER: user1
       RABBITMQ_DEFAULT_PASS: password1
+      RABBITMQ_SERVER_ADDITIONAL_ERL_ARGS: -rabbit disk_free_limit 268435456
+      # default 48 MiB low watermark
+      # 268435456 byte -> 256 mib -> 0,25 gib
+      # 536870912 byte -> 512 mib -> 0,5 gib -> 0,536870912 gig
+    volumes:
+      - ./rabbitmq:/var/lib/rabbitmq
