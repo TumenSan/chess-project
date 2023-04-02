@@ -7,3 +7,6 @@
 [submodule "chess-engine-exp"]
 	path = chess-engine-exp
 	url = https://github.com/TumenSan/chess-engine-exp.git
+[submodule "chess-estimation"]
+	path = chess-estimation
+	url = https://github.com/TumenSan/chess-estimation.git
