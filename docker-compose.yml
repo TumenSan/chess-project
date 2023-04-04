@@ -29,6 +29,7 @@ services:
       - mongo
     environment:
       MONGO_URL: mongodb://mongo:27017/chess-project
+    restart: on-failure
 
   mongo:
     container_name: mongo-db
