@@ -42,10 +42,22 @@ services:
       context: ./chess-engine-exp
       dockerfile: Dockerfile
     ports:
+      - "7000:7000"
+    depends_on:
+      - backend
+      - rabbitmq
+
+  estimation:
+    container_name: chess-estimation
+    build: 
+      context: ./chess-estimation
+      dockerfile: Dockerfile
+    ports:
       - "6000:6000"
     depends_on:
       - backend
       - rabbitmq
+      - engine
 
   rabbitmq:
     image: rabbitmq:3.9-management
