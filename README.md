@@ -4,20 +4,45 @@
 
 ________
 
-UseCaseDiagram
+Use Case Diagram
 ![UseCaseDiagram](images/UseCaseDiagram.png)
 
-ComponentDiagram
+________
+
+Component Diagram
 ![ComponentDiagram](images/ComponentDiagram.png)
 
-SequenceDiagram
+________
+
+Sequence Diagram
 ![SequenceDiagram](images/SequenceDiagram.png)
+
+________
+
+Engine service analysis scheme
+![SequenceDiagram](images/EngineServiceAnalysis.png)
+
+________
+
+Service analysis scheme
+![SequenceDiagram](images/ServiceAnalysis.png)
+
+________
+
+Database scheme
+![SequenceDiagram](images/DBScheme.png)
+
+________
 
 Games
 ![Games](images/Games.png)
 
-GamesRecords
+________
+
+Games Records
 ![GamesRecords](images/GamesRecords.png)
 
-GameAnalysis
+________
+
+Game Analysis
 ![GameAnalysis](images/GameAnalysis.png)
